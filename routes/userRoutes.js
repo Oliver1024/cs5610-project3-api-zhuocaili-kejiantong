@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
         return UserModel.addUser(req.body)
             .then((user) => {
                 const token = createToken({ email, username })
-                return res.cookie('onBoardToken', token, { httpOnly: true, sameSite: 'none', secure: false  }).status(200).send({ email, username })
+                return res.cookie('onBoardToken', token, { httpOnly: true, sameSite: 'none', secure: true  }).status(200).send({ email, username })
             })
             .catch((error) => res.status(500).send({ message: "Internal database error" }))
     }
@@ -42,7 +42,7 @@ router.post('/authenticate', async (req, res) => {
         if (existedUser.password === password) {
             const username = existedUser.username
             const token = createToken({ email, username })
-            return res.cookie('onBoardToken', token, { httpOnly: true, sameSite: 'none', secure: false }).status(200).send({ email, username })
+            return res.cookie('onBoardToken', token, { httpOnly: true, sameSite: 'none', secure: true }).status(200).send({ email, username })
         } else {
             return res.status(404).send({ message: 'Invalid password!' })
         }
