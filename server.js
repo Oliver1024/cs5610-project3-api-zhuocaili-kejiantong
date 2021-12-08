@@ -17,11 +17,12 @@ app.use(express.json())
     .use(express.urlencoded({ extended: true }))
     .use(cookieParser())
     .use(cors({
+        origin: 'http://localhost',
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
         credentials: true
     }))
 
-mongoose.connect("mongodb+srv://onBoardAdmin:onBoard_123456@cluster0.si7xq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+mongoose.connect(dbUrl, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     autoIndex: true, //make this also true
