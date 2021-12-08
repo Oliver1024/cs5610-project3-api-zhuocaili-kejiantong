@@ -35,11 +35,11 @@ app.use('/api/users', userRoutes)
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-// app.get('*', function (req, res) {
-//     console.log("received request");
-//     res.sendFile(path.join(__dirname, "build", "index.html"));
-//     // res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.get('*', function (req, res) {
+    console.log("received request");
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+    // res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 // 3300
 const port = process.env.PORT
 app.listen(port, function () {
