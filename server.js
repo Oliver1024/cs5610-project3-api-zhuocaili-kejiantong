@@ -21,7 +21,7 @@ app.use(express.json())
         credentials: true
     }))
 
-mongoose.connect(dbUrl, {
+mongoose.connect("mongodb+srv://onBoardAdmin:onBoard_123456@cluster0.si7xq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     autoIndex: true, //make this also true
