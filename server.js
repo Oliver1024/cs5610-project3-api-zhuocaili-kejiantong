@@ -41,7 +41,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 //     // res.sendFile(path.join(__dirname, 'build', 'index.html'));
 // });
 // 3300
-app.listen(80, function () {
+const port = process.env.PORT
+app.listen(port, function () {
     console.log('Starting server at 3300');
 });
 
