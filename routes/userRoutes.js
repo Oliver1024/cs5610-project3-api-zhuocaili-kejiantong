@@ -73,7 +73,7 @@ router.put('/profile', auth_middleware, (req, res) => {
 });
 
 router.get('/logout', auth_middleware, function (req, res) {
-    return res.cookie('onBoardToken', { expires: Date.now(), httpOnly: true}).status(200).send({ message: 'Logout successfully!' });
+    return res.cookie('onBoardToken', {maxAge: 0}).status(200).send({ message: 'Logout successfully!' });
 })
 
 router.get('/favorites', auth_middleware, (req, res) => {
