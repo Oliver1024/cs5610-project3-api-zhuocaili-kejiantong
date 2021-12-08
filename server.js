@@ -17,7 +17,7 @@ app.use(express.json())
     .use(express.urlencoded({ extended: true }))
     .use(cookieParser())
     .use(cors({
-        origin: ['https://onboardapp.herokuapp.com/','http://onboardapp.herokuapp.com/'],
+        origin: 'https://onboardapp.herokuapp.com/',
         methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD', 'DELETE'],
         credentials: true
     }))
