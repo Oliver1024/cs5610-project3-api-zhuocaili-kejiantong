@@ -120,10 +120,9 @@ router.put("/profile", auth_middleware, (req, res) => {
     return res.status(400).send({ message: "Please upload new image" });
   UserModel.findUserAndUpdate(req.email, req.body)
     .then((response) => {
-      console.log(req.body);
       res
         .status(200)
-        .json({ user: response.data, message: "Successfully Updated" });
+        .json({ image: response.image, message: "Successfully Updated" });
     })
     .catch((err) => {
       res.status(422).send(err.message);
