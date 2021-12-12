@@ -50,10 +50,10 @@ app.use("/api/users", userRoutes).use("/api/jobs", jobRoutes);
 
 app.use(express.static(path.join(__dirname, "build")));
 
-// app.get('*', function (req, res) {
-//     res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
-// 3300
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 const port = process.env.PORT || 3300;
 app.listen(port, function () {
   console.log(`Starting server at ${port}`);
