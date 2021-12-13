@@ -1,4 +1,4 @@
 # on-board-backendAPI
-## Collaborator: Zhuocai Li
+## Collaborator: Zhuocai Li / Kejian Tong
 ### Version1.0
  Finish register & login
